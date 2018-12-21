@@ -1,0 +1,28 @@
+{
+  "name": "sequelize-koa-react-proxy-boilerplate",
+  "description": "A boilerplate for a backend using koa v2 and sequelize, a react frontend and a proxy between them",
+  "version": "1.0.0",
+  "scripts": {
+    "frontend": "cd frontend && pm2 start pm2config.json",
+    "backend": "cd backend && pm2 start pm2config.json",
+    "start": "concurrently --kill-others-on-fail \"yarn frontend\" \"yarn backend\"",
+    "stop": "concurrently --kill-others-on-fail \"pm2 stop backend\" \"pm2 stop frontend\"",
+    "restart": "concurrently --kill-others-on-fail \"pm2 restart backend\" \"pm2 restart frontend\"",
+    "delete": "concurrently --kill-others-on-fail \"pm2 delete backend\" \"pm2 delete frontend\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Tomas Freudenberg",
+    "email": "tefreudenberg@uc.cl"
+  },
+  "contributors": [
+    {
+      "name": "Nicolas Freudenberg",
+      "email": "nrfreudenberg@uc.cl"
+    }
+  ]
+}
